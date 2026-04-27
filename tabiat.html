@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanatoriya tabiati — Buloglibog' chiroyi sanatoriyasi</title>
+  <meta name="description" content="Buloglibog' chiroyi sanatoriyasining tabiati — Qo'qon shahridagi yashil hudud, gullar, daraxtlar va dam olish maydonlari fotosuratlari." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:  { DEFAULT: '#0E7CC4', dark: '#0A5E94', light: '#3596DA' },
+            accent:   { DEFAULT: '#6FBE3F', dark: '#588F33', light: '#8DCC65' },
+            softblue: '#F0F7FB',
+            softgreen:'#F4FAEE',
+            ink:      '#0F172A',
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+          boxShadow: {
+            soft: '0 6px 24px -8px rgba(14, 124, 196, 0.18)',
+            card: '0 10px 40px -12px rgba(15, 23, 42, 0.10)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAFCFD;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(14, 124, 196, 0.07) 1px, transparent 0);
+      background-size: 26px 26px;
+    }
+    .hero-gradient {
+      background:
+        radial-gradient(1200px 500px at 90% -10%, rgba(111,190,63,0.20), transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(14,124,196,0.18), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, #F0F7FB 100%);
+    }
+    figure.gallery-item {
+      break-inside: avoid;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    figure.gallery-item:hover {
+      transform: translateY(-3px) scale(1.01);
+    }
+    /* Lightbox */
+    #lightbox {
+      transition: opacity .25s ease;
+    }
+    #lightbox img { max-height: 92vh; max-width: 95vw; }
+    .nav-btn {
+      transition: all .2s ease;
+    }
+    .nav-btn:hover { transform: scale(1.1); background: rgba(255,255,255,0.25); }
+  </style>
+</head>
+
+<body class="text-ink antialiased">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="images/logo/buloglibog-chiroyilogo.png.jpg" alt="Buloglibog' chiroyi" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover bg-softblue" />
+          <div class="leading-tight">
+            <div class="font-bold text-ink text-sm lg:text-base">Buloglibog' chiroyi</div>
+            <div class="text-[11px] lg:text-xs text-gray-500">Sanatoriyasi · Qo'qon</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-700">
+          <a href="index.html" class="hover:text-primary transition">Bosh sahifa</a>
+          <a href="index.html#xizmatlar" class="hover:text-primary transition">Xizmatlar</a>
+          <a href="index.html#shifokorlar" class="hover:text-primary transition">Shifokorlar</a>
+          <a href="tabiat.html" class="text-primary font-semibold">Tabiat</a>
+          <a href="index.html#manzil" class="hover:text-primary transition">Manzil</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="tel:+998773240003" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary-dark transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.5a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.05L7.6 9.7a13 13 0 006.7 6.7l1.4-1.78a1 1 0 011.05-.27l3.6 1.2a1 1 0 01.68.95V19a2 2 0 01-2 2A18 18 0 013 5z"/></svg>
+            +998 77 324 00 03
+          </a>
+          <a href="index.html#bron" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-4 py-2.5 rounded-full transition shadow-soft">
+            Bron qilish
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-gradient relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20 text-center">
+      <span class="inline-flex items-center gap-2 bg-white border border-accent/30 text-accent-dark text-xs font-semibold px-3 py-1.5 rounded-full">
+        <span class="w-2 h-2 bg-accent rounded-full"></span>
+        Sanatoriya hududi
+      </span>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.05] tracking-tight">
+        Sanatoriya
+        <span class="text-accent-dark">tabiati</span>
+      </h1>
+      <p class="mt-5 text-lg text-gray-600 max-w-2xl mx-auto">
+        Tinch yashil hudud, gullar, daraxtlar va dam olish maydonlari.
+        Bemorlarimiz uchun sog'liq va xotirjamlik beruvchi muhit.
+      </p>
+      <div class="mt-7 inline-flex items-center gap-3 text-sm text-gray-500">
+        <span class="bg-white px-3 py-1.5 rounded-full border border-gray-100"><strong class="text-ink">20</strong> ta tanlangan surat</span>
+        <span class="bg-white px-3 py-1.5 rounded-full border border-gray-100">Yuqori sifat</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="py-12 lg:py-16 bg-softblue/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="gallery" class="columns-1 sm:columns-2 lg:columns-3 gap-6 [&>*]:mb-6">
+        <!-- Images injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 lg:py-20 bg-gradient-to-br from-primary via-primary-dark to-ink text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">
+        Bu yerda dam oling va sog'lig'ingizni tiklang
+      </h2>
+      <p class="mt-4 text-blue-100">
+        Tibbiy nazorat ostida tinch va sokin muhit. 50 o'rinli statsionar — sizni kutmoqda.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="index.html#bron" class="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold px-7 py-3.5 rounded-full transition shadow-soft">
+          Bron qilish
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+        <a href="tel:+998773240003" class="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-blue-50 font-semibold px-7 py-3.5 rounded-full transition">
+          +998 77 324 00 03
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+      <div class="flex items-center gap-3">
+        <img src="images/logo/buloglibog-chiroyilogo.png.jpg" alt="Logo" class="w-9 h-9 rounded-full" />
+        <span>© 2026 Buloglibog' chiroyi sanatoriyasi</span>
+      </div>
+      <a href="index.html" class="hover:text-white transition inline-flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Bosh sahifaga qaytish
+      </a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4" onclick="closeLightbox(event)">
+    <button class="nav-btn absolute top-5 right-5 w-12 h-12 rounded-full bg-white/15 text-white text-2xl flex items-center justify-center" onclick="closeLightbox(event)" aria-label="Yopish">×</button>
+    <button class="nav-btn absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/15 text-white flex items-center justify-center" onclick="navigate(-1, event)" aria-label="Orqaga">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="nav-btn absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/15 text-white flex items-center justify-center" onclick="navigate(1, event)" aria-label="Oldinga">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()" />
+    <div id="lightbox-counter" class="absolute bottom-5 left-1/2 -translate-x-1/2 text-white/80 text-sm font-medium bg-black/40 px-4 py-1.5 rounded-full">1 / 20</div>
+  </div>
+
+  <script>
+    const images = [
+      "K_F_9146.jpg","K_F_9151.jpg","K_F_9156.jpg","K_F_9160.jpg","K_F_9166.jpg",
+      "K_F_9170.jpg","K_F_9176.jpg","K_F_9180.jpg","K_F_9186.jpg","K_F_9191.jpg",
+      "K_F_9196.jpg","K_F_9201.jpg","K_F_9206.jpg","K_F_9211.jpg","K_F_9216.jpg",
+      "K_F_9221.jpg","K_F_9226.jpg","K_F_9231.jpg","K_F_9236.jpg","K_F_9241.jpg"
+    ];
+
+    const gallery = document.getElementById('gallery');
+    images.forEach((name, i) => {
+      const fig = document.createElement('figure');
+      fig.className = 'gallery-item rounded-2xl overflow-hidden cursor-pointer shadow-card bg-white';
+      fig.innerHTML = `<img src="images/tabiat/${name}" alt="Sanatoriya tabiati - rasm ${i + 1}" loading="lazy" data-index="${i}" class="w-full h-auto block" />`;
+      fig.addEventListener('click', () => openLightbox(i));
+      gallery.appendChild(fig);
+    });
+
+    let currentIndex = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+
+    function openLightbox(i) {
+      currentIndex = i;
+      updateLightbox();
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (e && e.target.closest('img#lightbox-img')) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+    function navigate(dir, e) {
+      if (e) e.stopPropagation();
+      currentIndex = (currentIndex + dir + images.length) % images.length;
+      updateLightbox();
+    }
+    function updateLightbox() {
+      lightboxImg.src = `images/tabiat/${images[currentIndex]}`;
+      lightboxImg.alt = `Sanatoriya tabiati - rasm ${currentIndex + 1}`;
+      counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  </script>
+</body>
+</html>

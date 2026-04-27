@@ -1,0 +1,18 @@
+# PowerShell skriptlari (faqat lokal ishlash uchun)
+*.ps1
+
+# Windows tizim fayllari
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# OS fayllari
+.DS_Store
+
+# Editor papkalari
+.vscode/
+.idea/
+
+# Vaqtinchalik fayllar
+*.tmp
+*.log
