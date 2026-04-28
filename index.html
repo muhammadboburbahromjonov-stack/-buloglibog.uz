@@ -19,16 +19,16 @@
       theme: {
         extend: {
           colors: {
-            primary:  { DEFAULT: '#0E7CC4', dark: '#0A5E94', light: '#3596DA' },
-            accent:   { DEFAULT: '#6FBE3F', dark: '#588F33', light: '#8DCC65' },
-            softblue: '#F0F7FB',
-            softgreen:'#F4FAEE',
-            ink:      '#0F172A',
+            primary:  { DEFAULT: '#0B6BAD', dark: '#084F82', light: '#1A87C8' },
+            accent:   { DEFAULT: '#5BA832', dark: '#45821F', light: '#74C44E' },
+            softblue: '#E8F4FD',
+            softgreen:'#EDF7E4',
+            ink:      '#0D1B2A',
           },
           fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           boxShadow: {
-            soft: '0 6px 24px -8px rgba(14, 124, 196, 0.18)',
-            card: '0 10px 40px -12px rgba(15, 23, 42, 0.10)',
+            soft: '0 6px 24px -8px rgba(11, 107, 173, 0.22)',
+            card: '0 10px 40px -12px rgba(13, 27, 42, 0.12)',
           },
         }
       }
@@ -39,19 +39,17 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #A8D8F0;
+      background-color: #EAF4FB;
       background-image:
-        radial-gradient(ellipse 80% 60% at 0% 0%, rgba(80,160,30,0.60) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 50% at 100% 100%, rgba(10,90,170,0.65) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(111,190,63,0.35) 0%, transparent 60%);
-      background-size: auto, auto, auto;
-      background-attachment: fixed, fixed, fixed;
+        linear-gradient(135deg, rgba(91,168,50,0.12) 0%, transparent 40%),
+        linear-gradient(225deg, rgba(11,107,173,0.14) 0%, transparent 45%);
+      background-attachment: fixed;
     }
     .hero-gradient {
       background:
-        radial-gradient(1200px 500px at 90% -10%, rgba(111,190,63,0.18), transparent 60%),
-        radial-gradient(900px 500px at -10% 10%, rgba(14,124,196,0.18), transparent 55%),
-        linear-gradient(180deg, #ffffff 0%, #F0F7FB 100%);
+        radial-gradient(1100px 480px at 95% -5%, rgba(91,168,50,0.13), transparent 60%),
+        radial-gradient(850px 460px at -5% 15%, rgba(11,107,173,0.13), transparent 55%),
+        linear-gradient(180deg, #ffffff 0%, #EAF4FB 100%);
     }
     .fade-in { opacity: 0; transform: translateY(16px); transition: all .7s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
