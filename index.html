@@ -39,32 +39,54 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #EAF4FB;
+      background-color: #dff0fb;
       background-image:
-        linear-gradient(135deg, rgba(91,168,50,0.12) 0%, transparent 40%),
-        linear-gradient(225deg, rgba(11,107,173,0.14) 0%, transparent 45%);
+        radial-gradient(ellipse 90% 70% at 0% 0%, rgba(91,168,50,0.30) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 100% 100%, rgba(11,107,173,0.32) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 50% at 50% 0%, rgba(11,107,173,0.12) 0%, transparent 60%);
       background-attachment: fixed;
     }
     .hero-gradient {
       background:
-        radial-gradient(1100px 480px at 95% -5%, rgba(91,168,50,0.13), transparent 60%),
-        radial-gradient(850px 460px at -5% 15%, rgba(11,107,173,0.13), transparent 55%),
-        linear-gradient(180deg, #ffffff 0%, #EAF4FB 100%);
+        radial-gradient(1200px 550px at 100% -10%, rgba(91,168,50,0.20), transparent 55%),
+        radial-gradient(900px 500px at -5% 20%, rgba(11,107,173,0.20), transparent 55%),
+        linear-gradient(160deg, #f0faff 0%, #ffffff 40%, #f4faf0 100%);
+    }
+    /* Dekorativ blob shakllar */
+    .blob-blue {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(11,107,173,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .blob-green {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(91,168,50,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Section ajratgich to'lqin */
+    .wave-divider { line-height: 0; }
+    /* Trust bar gradient */
+    .trust-bar {
+      background: linear-gradient(135deg, #0B6BAD 0%, #0d7fbf 50%, #1a9060 100%);
+    }
+    /* Shifokor kartasi rangli chiziq */
+    .doctor-card-header-blue  { background: linear-gradient(135deg, #0B6BAD, #1A87C8); }
+    .doctor-card-header-green { background: linear-gradient(135deg, #5BA832, #74C44E); }
+    /* Statistika raqamlari */
+    .stat-num {
+      background: linear-gradient(135deg, #0B6BAD, #5BA832);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .fade-in { opacity: 0; transform: translateY(16px); transition: all .7s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
-    /* Knopka animatsiyasi kichik */
     a.rounded-full, button.rounded-full {
       transition-duration: 120ms !important;
       transition-property: background-color, border-color, box-shadow, color !important;
     }
-    a.rounded-full:hover, button.rounded-full:hover {
-      transform: translateY(-1px);
-    }
-    a.rounded-full:active, button.rounded-full:active {
-      transform: translateY(0px);
-    }
-    /* Kartachalarda ham kichikroq ko'tarilish */
+    a.rounded-full:hover, button.rounded-full:hover { transform: translateY(-1px); }
+    a.rounded-full:active, button.rounded-full:active { transform: translateY(0px); }
     article.group { transition-duration: 200ms !important; }
     article.group:hover { --tw-translate-y: -2px !important; }
   </style>
@@ -113,7 +135,11 @@
 
   <!-- ===================== HERO ===================== -->
   <section id="hero" class="hero-gradient relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <!-- Dekorativ bloblar -->
+    <div class="blob-blue w-96 h-96 -top-24 -right-24 opacity-60"></div>
+    <div class="blob-green w-80 h-80 bottom-0 left-0 opacity-50"></div>
+    <div class="blob-blue w-48 h-48 top-1/2 left-1/3 opacity-30"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative z-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div>
           <span class="inline-flex items-center gap-2 bg-white border border-primary/20 text-primary text-xs font-semibold px-3 py-1.5 rounded-full">
@@ -146,16 +172,16 @@
 
           <!-- Hero stats -->
           <div class="mt-10 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
-            <div>
-              <div class="text-3xl font-extrabold text-primary">50</div>
+            <div class="bg-white/70 backdrop-blur rounded-2xl p-4 shadow-soft">
+              <div class="text-3xl font-extrabold stat-num">50</div>
               <div class="text-xs text-gray-500 mt-1">Statsionar o'rin</div>
             </div>
-            <div>
-              <div class="text-3xl font-extrabold text-primary">14+</div>
+            <div class="bg-white/70 backdrop-blur rounded-2xl p-4 shadow-soft">
+              <div class="text-3xl font-extrabold stat-num">14+</div>
               <div class="text-xs text-gray-500 mt-1">Tibbiy yo'nalish</div>
             </div>
-            <div>
-              <div class="text-3xl font-extrabold text-primary">4</div>
+            <div class="bg-white/70 backdrop-blur rounded-2xl p-4 shadow-soft">
+              <div class="text-3xl font-extrabold stat-num">4</div>
               <div class="text-xs text-gray-500 mt-1">Mutaxassis</div>
             </div>
           </div>
@@ -184,43 +210,43 @@
   </section>
 
   <!-- ===================== TRUST BAR ===================== -->
-  <section class="border-y border-gray-100 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <section class="trust-bar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="flex items-start gap-3">
-          <div class="w-11 h-11 rounded-xl bg-softblue flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
           <div>
-            <div class="font-bold text-ink">Litsenziyalangan</div>
-            <div class="text-sm text-gray-500">SSV ro'yxatidan o'tgan</div>
+            <div class="font-bold text-white">Litsenziyalangan</div>
+            <div class="text-sm text-white/70">SSV ro'yxatidan o'tgan</div>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-11 h-11 rounded-xl bg-softgreen flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-accent-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m6 4h2"/></svg>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2H7a2 2 0 00-2 2v2m6 4h2"/></svg>
           </div>
           <div>
-            <div class="font-bold text-ink">50 o'rinli statsionar</div>
-            <div class="text-sm text-gray-500">Qulay xonalar</div>
+            <div class="font-bold text-white">50 o'rinli statsionar</div>
+            <div class="text-sm text-white/70">Qulay xonalar</div>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-11 h-11 rounded-xl bg-softblue flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
           </div>
           <div>
-            <div class="font-bold text-ink">Laparoskopiya</div>
-            <div class="text-sm text-gray-500">Zamonaviy xirurgiya</div>
+            <div class="font-bold text-white">Laparoskopiya</div>
+            <div class="text-sm text-white/70">Zamonaviy xirurgiya</div>
           </div>
         </div>
-        <div class="flex items-start gap-3">
-          <div class="w-11 h-11 rounded-xl bg-softgreen flex items-center justify-center flex-shrink-0">
-            <svg class="w-5 h-5 text-accent-dark" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
           </div>
           <div>
-            <div class="font-bold text-ink">Tajribali shifokorlar</div>
-            <div class="text-sm text-gray-500">Qodirovlar oilasi</div>
+            <div class="font-bold text-white">Tajribali shifokorlar</div>
+            <div class="text-sm text-white/70">Qodirovlar oilasi</div>
           </div>
         </div>
       </div>
@@ -426,43 +452,55 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Doctor 1 -->
-        <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center hover:shadow-card transition">
-          <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-            <span class="text-3xl font-extrabold text-primary">A</span>
+        <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col items-center text-center hover:shadow-card transition">
+          <div class="doctor-card-header-blue w-full h-2 rounded-t-3xl"></div>
+          <div class="p-8">
+            <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-5 ring-4 ring-primary/10">
+              <span class="text-3xl font-extrabold text-primary">A</span>
+            </div>
+            <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Bosh shifokor</div>
+            <h3 class="font-bold text-ink text-base">Qodirov Akramjon Akbarovich</h3>
+            <p class="mt-2 text-sm text-gray-500">Sanatoriya rahbari</p>
           </div>
-          <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Bosh shifokor</div>
-          <h3 class="font-bold text-ink text-base">Qodirov Akramjon Akbarovich</h3>
-          <p class="mt-2 text-sm text-gray-500">Sanatoriya rahbari</p>
         </div>
 
         <!-- Doctor 2 -->
-        <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center hover:shadow-card transition">
-          <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-            <span class="text-3xl font-extrabold text-accent-dark">A</span>
+        <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col items-center text-center hover:shadow-card transition">
+          <div class="doctor-card-header-green w-full h-2 rounded-t-3xl"></div>
+          <div class="p-8">
+            <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-5 ring-4 ring-accent/10">
+              <span class="text-3xl font-extrabold text-accent-dark">A</span>
+            </div>
+            <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Shifokor</div>
+            <h3 class="font-bold text-ink text-base">Qodirov Azizjon Akramovich</h3>
+            <p class="mt-2 text-sm text-gray-500">Shifokor</p>
           </div>
-          <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Shifokor</div>
-          <h3 class="font-bold text-ink text-base">Qodirov Azizjon Akramovich</h3>
-          <p class="mt-2 text-sm text-gray-500">Shifokor</p>
         </div>
 
         <!-- Doctor 3 -->
-        <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center hover:shadow-card transition">
-          <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-5">
-            <span class="text-3xl font-extrabold text-primary">A</span>
+        <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col items-center text-center hover:shadow-card transition">
+          <div class="doctor-card-header-blue w-full h-2 rounded-t-3xl"></div>
+          <div class="p-8">
+            <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-5 ring-4 ring-primary/10">
+              <span class="text-3xl font-extrabold text-primary">A</span>
+            </div>
+            <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Shifokor</div>
+            <h3 class="font-bold text-ink text-base">Qodirov Akmaljon Akramovich</h3>
+            <p class="mt-2 text-sm text-gray-500">Shifokor</p>
           </div>
-          <div class="text-xs font-semibold text-primary uppercase tracking-wider mb-2">Shifokor</div>
-          <h3 class="font-bold text-ink text-base">Qodirov Akmaljon Akramovich</h3>
-          <p class="mt-2 text-sm text-gray-500">Shifokor</p>
         </div>
 
         <!-- Nurse -->
-        <div class="bg-white border border-gray-100 rounded-3xl p-8 flex flex-col items-center text-center hover:shadow-card transition">
-          <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-5">
-            <span class="text-3xl font-extrabold text-accent-dark">Z</span>
+        <div class="bg-white border border-gray-100 rounded-3xl overflow-hidden flex flex-col items-center text-center hover:shadow-card transition">
+          <div class="doctor-card-header-green w-full h-2 rounded-t-3xl"></div>
+          <div class="p-8">
+            <div class="w-20 h-20 rounded-full bg-accent/10 flex items-center justify-center mb-5 ring-4 ring-accent/10">
+              <span class="text-3xl font-extrabold text-accent-dark">Z</span>
+            </div>
+            <div class="text-xs font-semibold text-accent-dark uppercase tracking-wider mb-2">Katta hamshira</div>
+            <h3 class="font-bold text-ink text-base">Mahmudova Zilolaxon Akramovna</h3>
+            <p class="mt-2 text-sm text-gray-500">Katta hamshira</p>
           </div>
-          <div class="text-xs font-semibold text-accent-dark uppercase tracking-wider mb-2">Katta hamshira</div>
-          <h3 class="font-bold text-ink text-base">Mahmudova Zilolaxon Akramovna</h3>
-          <p class="mt-2 text-sm text-gray-500">Katta hamshira</p>
         </div>
       </div>
     </div>
