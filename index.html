@@ -110,10 +110,54 @@
       z-index: 60; display: flex; gap: 8px;
     }
     @media (min-width: 768px) { .mobile-fab { display: none; } }
+
+    /* Mobil bo'lim izolatsiyasi rejimi */
+    @media (max-width: 1023px) {
+      body.section-focus section[data-section]:not(.section-active) { display: none !important; }
+      body.section-focus header,
+      body.section-focus footer,
+      body.section-focus .mobile-fab { display: none !important; }
+      body.section-focus .nature-bg { display: block !important; }
+    }
+    .nature-bg {
+      display: none;
+      position: fixed; inset: 0; z-index: 0;
+      background-size: cover; background-position: center;
+      background-repeat: no-repeat;
+    }
+    .nature-bg::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11,107,173,0.55) 0%, rgba(91,168,50,0.55) 100%);
+    }
+    body.section-focus { padding-top: 0 !important; padding-bottom: 0 !important; }
+    body.section-focus section.section-active {
+      position: relative; z-index: 10;
+      margin: 64px 16px 24px; border-radius: 28px;
+      background: rgba(255,255,255,0.97); backdrop-filter: blur(12px);
+      box-shadow: 0 30px 80px -20px rgba(13,27,42,0.45);
+      overflow: hidden;
+    }
+    .section-back-btn {
+      display: none;
+      position: fixed; top: 14px; left: 14px; z-index: 70;
+      align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      color: #0B6BAD; font-weight: 600; font-size: 14px;
+      padding: 8px 14px; border-radius: 9999px;
+      box-shadow: 0 6px 24px -8px rgba(11,107,173,0.4);
+    }
+    body.section-focus .section-back-btn { display: inline-flex; }
   </style>
 </head>
 
 <body class="text-ink antialiased pb-20 sm:pb-0">
+
+  <!-- Mobil bo'lim fokus rejimi: tabiat foni + qaytish tugmasi -->
+  <div class="nature-bg" id="nature-bg"></div>
+  <button id="section-back" class="section-back-btn">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+    Hammasini ko'rish
+  </button>
 
   <!-- Mobil pastki tezkor tugmalar -->
   <div class="mobile-fab">
@@ -211,7 +255,7 @@
   </header>
 
   <!-- ===================== HERO ===================== -->
-  <section id="hero" class="hero-gradient relative overflow-hidden">
+  <section id="hero" data-section="hero" class="hero-gradient relative overflow-hidden">
     <!-- Dekorativ bloblar -->
     <div class="blob-blue w-96 h-96 -top-24 -right-24 opacity-60"></div>
     <div class="blob-green w-80 h-80 bottom-0 left-0 opacity-50"></div>
@@ -286,7 +330,7 @@
   </section>
 
   <!-- ===================== TRUST BAR ===================== -->
-  <section class="trust-bar">
+  <section data-section="trust" class="trust-bar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="flex items-center gap-3">
@@ -330,7 +374,7 @@
   </section>
 
   <!-- ===================== SERVICES ===================== -->
-  <section id="xizmatlar" class="py-14 sm:py-20 lg:py-28">
+  <section id="xizmatlar" data-section="xizmatlar" class="py-14 sm:py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center mb-14">
         <span class="inline-block text-xs font-semibold uppercase tracking-wider text-accent-dark bg-softgreen px-3 py-1.5 rounded-full">Xizmatlar</span>
@@ -463,7 +507,7 @@
   </section>
 
   <!-- ===================== WHY US ===================== -->
-  <section id="afzalliklar" class="py-14 sm:py-20 lg:py-28 bg-softblue">
+  <section id="afzalliklar" data-section="afzalliklar" class="py-14 sm:py-20 lg:py-28 bg-softblue">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center mb-14">
         <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary bg-white px-3 py-1.5 rounded-full">Nima uchun bizni tanlaysiz?</span>
@@ -518,7 +562,7 @@
   </section>
 
   <!-- ===================== DOCTORS ===================== -->
-  <section id="shifokorlar" class="py-14 sm:py-20 lg:py-28">
+  <section id="shifokorlar" data-section="shifokorlar" class="py-14 sm:py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center mb-14">
         <span class="inline-block text-xs font-semibold uppercase tracking-wider text-accent-dark bg-softgreen px-3 py-1.5 rounded-full">Mutaxassislarimiz</span>
@@ -583,7 +627,7 @@
   </section>
 
   <!-- ===================== STATSIONAR ===================== -->
-  <section id="statsionar" class="py-14 sm:py-20 lg:py-28 bg-softgreen">
+  <section id="statsionar" data-section="statsionar" class="py-14 sm:py-20 lg:py-28 bg-softgreen">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -642,7 +686,7 @@
   </section>
 
   <!-- ===================== TESTIMONIALS ===================== -->
-  <section id="fikrlar" class="py-14 sm:py-20 lg:py-28">
+  <section id="fikrlar" data-section="fikrlar" class="py-14 sm:py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-2xl mx-auto text-center mb-14">
         <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary bg-softblue px-3 py-1.5 rounded-full">Bemorlar fikri</span>
@@ -716,7 +760,7 @@
   </section>
 
   <!-- ===================== FAQ ===================== -->
-  <section id="faq" class="py-14 sm:py-20 lg:py-28">
+  <section id="faq" data-section="faq" class="py-14 sm:py-20 lg:py-28">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <span class="inline-block text-xs font-semibold uppercase tracking-wider text-primary bg-softblue px-3 py-1.5 rounded-full">Tez-tez beriladigan savollar</span>
@@ -776,7 +820,7 @@
   </section>
 
   <!-- ===================== LOCATION ===================== -->
-  <section id="manzil" class="py-14 sm:py-20 lg:py-28 bg-softblue">
+  <section id="manzil" data-section="manzil" class="py-14 sm:py-20 lg:py-28 bg-softblue">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 items-stretch">
         <!-- Map -->
@@ -864,7 +908,7 @@
   </section>
 
   <!-- ===================== BOOKING ===================== -->
-  <section id="bron" class="py-14 sm:py-20 lg:py-28 bg-gradient-to-br from-primary via-primary-dark to-ink text-white relative overflow-hidden">
+  <section id="bron" data-section="bron" class="py-14 sm:py-20 lg:py-28 bg-gradient-to-br from-primary via-primary-dark to-ink text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-10 right-10 w-72 h-72 bg-accent rounded-full blur-3xl"></div>
       <div class="absolute bottom-10 left-10 w-96 h-96 bg-primary-light rounded-full blur-3xl"></div>
@@ -1002,7 +1046,6 @@
       menuPanel.classList.add('hidden');
       iconOpen.classList.remove('hidden');
       iconClose.classList.add('hidden');
-      document.body.classList.remove('overflow-hidden');
     }
     function openMenu() {
       menuPanel.classList.remove('hidden');
@@ -1012,9 +1055,56 @@
     menuBtn?.addEventListener('click', () => {
       if (menuPanel.classList.contains('hidden')) openMenu(); else closeMenu();
     });
-    // Bo'limga o'tilganda menyu yopilsin
+
+    // === MOBIL BO'LIM FOKUS REJIMI ===
+    const natureImages = [
+      'images/tabiat/K_F_9146.jpg','images/tabiat/K_F_9156.jpg','images/tabiat/K_F_9170.jpg',
+      'images/tabiat/K_F_9186.jpg','images/tabiat/K_F_9201.jpg','images/tabiat/K_F_9216.jpg',
+      'images/tabiat/K_F_9231.jpg','images/tabiat/K_F_9241.jpg'
+    ];
+    const natureBg = document.getElementById('nature-bg');
+    const backBtn = document.getElementById('section-back');
+
+    function focusSection(sectionId) {
+      // Faqat mobil/planshet
+      if (window.innerWidth >= 1024) return;
+      const target = document.querySelector(`section[data-section="${sectionId}"]`);
+      if (!target) return;
+      // Avvalgi aktivni o'chirish
+      document.querySelectorAll('section.section-active').forEach(s => s.classList.remove('section-active'));
+      target.classList.add('section-active');
+      // Tasodifiy tabiat fonini tanlash
+      const randomImg = natureImages[Math.floor(Math.random() * natureImages.length)];
+      natureBg.style.backgroundImage = `url("${randomImg}")`;
+      document.body.classList.add('section-focus');
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+    function exitFocus() {
+      document.body.classList.remove('section-focus');
+      document.querySelectorAll('section.section-active').forEach(s => s.classList.remove('section-active'));
+    }
+
+    // Mobil menyudagi havolalarni qayta ishlash
     document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const sectionId = href.slice(1);
+          closeMenu();
+          // Hashga kelishi uchun qisqa kutish
+          setTimeout(() => focusSection(sectionId), 50);
+        } else {
+          // tel: yoki tabiat.html — oddiy o'zgartirsiz
+          closeMenu();
+        }
+      });
+    });
+    // Qaytish tugmasi
+    backBtn?.addEventListener('click', exitFocus);
+    // Logo bosilganda ham qaytish
+    document.querySelector('a[href="#hero"]')?.addEventListener('click', () => {
+      if (document.body.classList.contains('section-focus')) exitFocus();
     });
   </script>
 </body>
