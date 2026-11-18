@@ -333,3 +333,71 @@ p { margin: 0; }
   .brand b { font-size: 17px; }
 }
 @media (max-width: 380px) { .brand img { width: 38px; height: 38px; } .header .btn { padding: 10px 13px; } }
+
+/* ===== 2 sahifali tuzilma ===== */
+.view { display: none; }
+.view.active { display: block; animation: viewIn .35s ease; }
+@keyframes viewIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .view.active { animation: none; } }
+
+#bosh .hero { min-height: min(74vh, 660px); }
+#bosh .hero .wrap { padding-bottom: 96px; }
+
+/* Bo'lim tugmalari */
+.tiles-wrap { position: relative; z-index: 2; margin-top: -56px; padding-bottom: 72px; }
+.tiles-title { font-size: clamp(22px, 2.6vw, 28px); margin: 0 0 18px; color: #fff; text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.tile {
+  display: flex; align-items: center; gap: 16px; padding: 22px 20px; text-decoration: none; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+  transition: transform .15s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.tile:hover { transform: translateY(-2px); border-color: var(--green-600); }
+.tile-ico { flex: none; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: var(--green-100); color: var(--green-700); }
+.tile-ico svg { width: 26px; height: 26px; }
+.tile-txt { flex: 1; min-width: 0; }
+.tile-txt b { display: block; font-size: 17px; line-height: 1.25; }
+.tile-txt small { display: block; font-size: 14px; color: var(--muted); margin-top: 3px; }
+.tile-arr { flex: none; font-size: 20px; color: var(--green-600); transition: transform .15s ease; }
+.tile:hover .tile-arr { transform: translateX(3px); }
+.tile-cta { background: var(--green-800); border-color: var(--green-800); color: #fff; }
+.tile-cta .tile-ico { background: var(--sun); color: var(--green-900); }
+.tile-cta small { color: rgba(255,255,255,.75); }
+.tile-cta .tile-arr { color: var(--sun); }
+@media (max-width: 900px) { .tiles { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: 1fr; gap: 10px; }
+  .tile { padding: 16px; gap: 14px; }
+  .tile-ico { width: 46px; height: 46px; }
+  .tiles-wrap { margin-top: -40px; padding-bottom: 48px; }
+  #bosh .hero .wrap { padding-bottom: 72px; }
+}
+
+/* Bo'lim sahifasi */
+.viewbar { background: var(--cream-2); border-bottom: 1px solid var(--line); }
+.viewbar .wrap { display: flex; align-items: center; gap: 14px; height: 56px; }
+.viewbar .back { font-weight: 700; text-decoration: none; color: var(--green-700); padding: 8px 14px 8px 10px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 15px; white-space: nowrap; }
+.viewbar .back:hover { border-color: var(--green-600); }
+.viewbar span { font-weight: 700; color: var(--muted); font-size: 15px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.view:not(#bosh) .section { padding: 44px 0 56px; }
+.view:not(#bosh) .section + .section { padding-top: 0; }
+.view:not(#bosh) .section.packs-bg { padding: 56px 0 64px; }
+.view-cta { border-top: 1px solid var(--line); padding: 26px 0; background: var(--cream-2); }
+.view-cta .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.view-cta span { font-weight: 600; }
+.view-cta .wrap > div { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 560px) { .view-cta .wrap > div, .view-cta .btn { width: 100%; } }
+.footer .grid { grid-template-columns: 1.4fr 1fr; }
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tile { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 14px; }
+  .tile-txt b { font-size: 15.5px; }
+  .tile-txt small, .tile-arr { display: none; }
+  .tile-cta { grid-column: span 2; flex-direction: row; align-items: center; }
+  .tile-cta .tile-txt small { display: block; }
+  .tiles-title { font-size: 20px; }
+  #bosh .hero .sub { font-size: 16px; }
+  .footer { padding-top: 36px; }
+  .footer .grid { gap: 22px; }
+}
+@media (max-width: 800px) { .footer .grid { grid-template-columns: 1fr; } }

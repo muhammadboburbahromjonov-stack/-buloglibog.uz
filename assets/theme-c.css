@@ -40,3 +40,6 @@ h2 { font-size: clamp(32px, 4.6vw, 52px); }
 .mbar { background: rgba(16,26,22,.96); }
 .faq summary::after { color: var(--sun); }
 .who-card a.btn-sun { color: #14201a; }
+.tile-cta { background: #1f2d26; border-color: var(--sun); }
+.tile-cta .tile-ico { color: #14201a; }
+.viewbar .back { color: var(--sun); }

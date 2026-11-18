@@ -33,3 +33,6 @@
 /* Footer */
 .footer { background: #071a2e; }
 .hero::after { background: linear-gradient(180deg, rgba(6,24,42,.5) 0%, rgba(6,24,42,.62) 40%, rgba(6,24,42,.92) 100%); }
+.tile-cta { background: var(--navy); border-color: var(--navy); }
+.tile-cta .tile-ico { background: linear-gradient(135deg, var(--gold-1), var(--gold-2)); color: #1a1a12; }
+.tile-cta .tile-arr { color: var(--gold-1); }
