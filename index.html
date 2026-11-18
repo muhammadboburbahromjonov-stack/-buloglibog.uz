@@ -536,8 +536,11 @@
       target.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });
       document.title = target === home ? baseTitle : target.getAttribute('data-title') + " — Buloglibog' chiroyi sanatoriyasi";
       window.scrollTo(0, 0);
+      setTimeout(function () { window.scrollTo(0, 0); }, 0);
     }
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.addEventListener('hashchange', show);
+    window.addEventListener('load', function () { window.scrollTo(0, 0); });
     show();
   })();
 </script>

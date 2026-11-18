@@ -431,3 +431,4 @@ p { margin: 0; }
 .room small { opacity: .75; font-size: 14px; }
 .room-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--sun); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
 @media (max-width: 600px) { .rooms { grid-template-columns: 1fr; } .room { display: grid; grid-template-columns: 1fr auto; text-align: left; align-items: center; gap: 0 12px; padding: 20px 18px; } .room b { grid-row: span 2; } .room strong { margin: 0; text-align: right; } .room small { text-align: right; } }
+.view { scroll-margin-top: 80px; }
