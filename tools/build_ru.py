@@ -272,6 +272,9 @@ for src, dst, other_uz in [("index.html", "ru.html", "index.html"), ("tabiat.htm
     s = s.replace(UZSW, "@@LANG@@")
     s = s.replace('href="tabiat.html"', 'href="tabiat-ru.html"').replace('href="index.html', 'href="ru.html')
     s = s.replace("@@LANG@@", RUSW)
+    s = s.replace('<link rel="canonical" href="https://buloglibog.uz/" />', '<link rel="canonical" href="https://buloglibog.uz/ru.html" />')
+    s = s.replace('<meta property="og:url" content="https://buloglibog.uz/" />', '<meta property="og:url" content="https://buloglibog.uz/ru.html" />')
+    s = s.replace('<link rel="canonical" href="https://buloglibog.uz/tabiat.html" />', '<link rel="canonical" href="https://buloglibog.uz/tabiat-ru.html" />')
     # JS strings
     for a, b in [("\" — Buloglibog' chiroyi sanatoriyasi\"", "\" — санаторий «Buloglibog' chiroyi»\""),
                  ("'Suratni kattalashtirish '", "'Увеличить фото '"),
