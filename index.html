@@ -4,31 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buloglibog' chiroyi sanatoriyasi — Qo'qon | Davolanish va dam olish kurslari</title>
-  <meta name="description" content="Qo'qon shahridagi Buloglibog' chiroyi sanatoriyasi: shifokor nazoratida davolanish va dam olish kurslari. Joy, 3 mahal ovqat, kunlik shifokor ko'rigi, fizioterapiya — hammasi narxga kiritilgan. Tel: +998 77 324 00 03" />
+  <meta name="description" content="Qo'qon shahridagi Buloglibog' chiroyi sanatoriyasi: shifokor nazoratida davolanish va dam olish kurslari. Joy, 3 mahal mazali taomlar, kunlik shifokor ko'rigi, fizioterapiya — hammasi narxga kiritilgan. Tel: +998 77 324 00 03" />
   <meta property="og:title" content="Buloglibog' chiroyi sanatoriyasi — Qo'qon" />
   <meta property="og:description" content="Shifokor nazoratida dam oling va sog'lig'ingizni tiklang. 7–14 kunlik davolanish kurslari. Joy band qilish: +998 77 324 00 03" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://buloglibog.uz/images/banner/K_F_9181.jpg" />
-  <meta name="theme-color" content="#12331f" />
+  <meta name="theme-color" content="#0a2540" />
   <link rel="icon" href="images/logo/buloglibog-chiroyilogo.png.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/theme-b.css" id="theme-b" />
+  <link rel="stylesheet" href="assets/theme-mix.css" id="theme-mix" />
   <script>
-    // Dizayn variantini sinash: ?dizayn=b yoki ?dizayn=c
+    // Boshqa variantlarni solishtirish: ?dizayn=a | b | c (standart — B+C aralash)
     (function () {
       var v = new URLSearchParams(location.search).get('dizayn');
-      if (v === 'b' || v === 'c') {
-        document.write('<link rel="stylesheet" href="assets/theme-' + v + '.css" />');
-        document.addEventListener('DOMContentLoaded', function () {
-          document.querySelectorAll('a[href^="index.html"], a[href^="tabiat.html"]').forEach(function (a) {
-            var h = a.getAttribute('href'), i = h.indexOf('#');
-            a.setAttribute('href', (i < 0 ? h : h.slice(0, i)) + '?dizayn=' + v + (i < 0 ? '' : h.slice(i)));
-          });
+      if (v !== 'a' && v !== 'b' && v !== 'c') return;
+      var b = document.getElementById('theme-b'), m = document.getElementById('theme-mix');
+      m.parentNode.removeChild(m);
+      if (v !== 'b') b.parentNode.removeChild(b);
+      if (v === 'c') document.write('<link rel="stylesheet" href="assets/theme-c.css" />');
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="index.html"], a[href^="tabiat.html"]').forEach(function (a) {
+          var h = a.getAttribute('href'), i = h.indexOf('#');
+          a.setAttribute('href', (i < 0 ? h : h.slice(0, i)) + '?dizayn=' + v + (i < 0 ? '' : h.slice(i)));
         });
-      }
+      });
     })();
   </script>
 </head>
@@ -61,7 +65,7 @@
   <div class="wrap">
     <span class="hero-tag">🌿 Qo'qon shahri · Litsenziya №073119</span>
     <h1>Shifokor nazoratida <em>dam oling</em> va sog'lig'ingizni tiklang</h1>
-    <p class="sub">Yashil bog' ichidagi sanatoriya. 7–14 kunlik kurs: yashash, 3 mahal parhez ovqat, har kuni shifokor ko'rigi va muolajalar — hammasi bitta narxda.</p>
+    <p class="sub">Yashil bog' ichidagi sanatoriya. 7–14 kunlik kurs: yashash, 3 mahal mazali taomlar, har kuni shifokor ko'rigi va muolajalar — hammasi bitta narxda.</p>
     <div class="hero-actions">
       <a class="btn btn-sun" href="#bron">
         Joy band qilish
@@ -75,7 +79,7 @@
     <div class="hero-facts">
       <div><b>50</b><span>o'rinli statsionar</span></div>
       <div><b>24/7</b><span>hamshira nazorati</span></div>
-      <div><b>3 mahal</b><span>parhez ovqat</span></div>
+      <div><b>3 mahal</b><span>mazali taomlar</span></div>
       <div><b>7–14</b><span>kunlik kurslar</span></div>
     </div>
   </div>
@@ -135,7 +139,7 @@
     <div class="head center reveal">
       <span class="eyebrow">Davolanish kurslari</span>
       <h2>O'zingizga mos kursni tanlang</h2>
-      <p class="lead">Har bir kursga yashash, ovqat, shifokor ko'rigi va muolajalar kiradi. Qo'shimcha to'lovlarsiz.</p>
+      <p class="lead">Har bir kursga yashash, mazali taomlar, shifokor ko'rigi va muolajalar kiradi. Qo'shimcha to'lovlarsiz.</p>
     </div>
     <div class="packs">
       <div class="pack reveal">
@@ -144,7 +148,7 @@
         <p class="for">Charchoq, stress, yillik tekshiruv va dam olish uchun.</p>
         <ul>
           <li>Qulay xonada yashash</li>
-          <li>3 mahal parhez ovqat</li>
+          <li>3 mahal mazali taomlar</li>
           <li>Shifokor ko'rigi va maslahati</li>
           <li>Asosiy tahlillar va UZI</li>
           <li>Fizioterapiya muolajalari</li>
@@ -197,7 +201,7 @@
       <p class="lead">Sanatoriyaga kelgan kundan boshlab har bir kun rejalashtirilgan: ertalab ko'rik, kunduzi muolajalar, kechqurun bog'da sayr.</p>
       <div class="incl-list">
         <div class="incl-item"><span class="n">01</span><b>Qulay xona</b><span>1, 2 yoki 3 o'rinli, toza va shinam</span></div>
-        <div class="incl-item"><span class="n">02</span><b>3 mahal parhez ovqat</b><span>Tashxisingizga mos menyu</span></div>
+        <div class="incl-item"><span class="n">02</span><b>3 mahal mazali taomlar</b><span>Uy taomlaridek mazali va to'yimli</span></div>
         <div class="incl-item"><span class="n">03</span><b>Har kuni shifokor ko'rigi</b><span>Holatingiz doimiy kuzatiladi</span></div>
         <div class="incl-item"><span class="n">04</span><b>24/7 hamshira</b><span>Kechasi ham yordam yoningizda</span></div>
         <div class="incl-item"><span class="n">05</span><b>Fizioterapiya</b><span>Kabinetimiz binoning o'zida</span></div>
@@ -341,7 +345,7 @@
     <div class="faq reveal">
       <details open>
         <summary>Narxi qancha?</summary>
-        <p>Narx kurs davomiyligi, xona turi (1, 2 yoki 3 o'rinli) va kerakli muolajalarga bog'liq. Yashash, ovqat, shifokor ko'rigi va muolajalar narxga kiradi. Aniq narxni bilish uchun qo'ng'iroq qiling: <a href="tel:+998773240003">+998 77 324 00 03</a>.</p>
+        <p>Narx kurs davomiyligi, xona turi (1, 2 yoki 3 o'rinli) va kerakli muolajalarga bog'liq. Yashash, taomlar, shifokor ko'rigi va muolajalar narxga kiradi. Aniq narxni bilish uchun qo'ng'iroq qiling: <a href="tel:+998773240003">+998 77 324 00 03</a>.</p>
       </details>
       <details>
         <summary>Qanday joy band qilaman?</summary>

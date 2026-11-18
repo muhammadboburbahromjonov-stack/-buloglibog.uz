@@ -5,25 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sanatoriya hududi — Buloglibog' chiroyi sanatoriyasi, Qo'qon</title>
   <meta name="description" content="Buloglibog' chiroyi sanatoriyasi hududi suratlarda: yashil bog', sayr yo'laklari, shiyponlar, favvora. Joy band qilish: +998 77 324 00 03" />
-  <meta name="theme-color" content="#12331f" />
+  <meta name="theme-color" content="#0a2540" />
   <link rel="icon" href="images/logo/buloglibog-chiroyilogo.png.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/theme-b.css" id="theme-b" />
+  <link rel="stylesheet" href="assets/theme-mix.css" id="theme-mix" />
   <script>
-    // Dizayn variantini sinash: ?dizayn=b yoki ?dizayn=c
+    // Boshqa variantlarni solishtirish: ?dizayn=a | b | c (standart — B+C aralash)
     (function () {
       var v = new URLSearchParams(location.search).get('dizayn');
-      if (v === 'b' || v === 'c') {
-        document.write('<link rel="stylesheet" href="assets/theme-' + v + '.css" />');
-        document.addEventListener('DOMContentLoaded', function () {
-          document.querySelectorAll('a[href^="index.html"], a[href^="tabiat.html"]').forEach(function (a) {
-            var h = a.getAttribute('href'), i = h.indexOf('#');
-            a.setAttribute('href', (i < 0 ? h : h.slice(0, i)) + '?dizayn=' + v + (i < 0 ? '' : h.slice(i)));
-          });
+      if (v !== 'a' && v !== 'b' && v !== 'c') return;
+      var b = document.getElementById('theme-b'), m = document.getElementById('theme-mix');
+      m.parentNode.removeChild(m);
+      if (v !== 'b') b.parentNode.removeChild(b);
+      if (v === 'c') document.write('<link rel="stylesheet" href="assets/theme-c.css" />');
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('a[href^="index.html"], a[href^="tabiat.html"]').forEach(function (a) {
+          var h = a.getAttribute('href'), i = h.indexOf('#');
+          a.setAttribute('href', (i < 0 ? h : h.slice(0, i)) + '?dizayn=' + v + (i < 0 ? '' : h.slice(i)));
         });
-      }
+      });
     })();
   </script>
 </head>
