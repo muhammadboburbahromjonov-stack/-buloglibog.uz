@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin panel — Buloglibog' chiroyi</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="images/logo/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/theme-b.css" />
+  <style>
+    body { background: var(--cream-2); }
+    .adm { max-width: 640px; margin: 0 auto; padding: 28px 16px 64px; }
+    .adm-card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: var(--shadow); }
+    .adm h1 { font-size: 26px; margin: 0 0 6px; }
+    .adm .sub { color: var(--muted); margin-bottom: 22px; }
+    .fld { display: grid; gap: 6px; margin-bottom: 16px; }
+    .fld label { font-weight: 700; font-size: 15px; }
+    .fld small { color: var(--muted); font-size: 13px; }
+    .fld input { font: inherit; font-size: 16px; padding: 13px 14px; border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); width: 100%; }
+    .fld input:focus { outline: none; border-color: var(--green-600); box-shadow: 0 0 0 3px rgba(26,135,200,.18); }
+    .row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    @media (max-width: 560px) { .row3 { grid-template-columns: 1fr; } }
+    .grp { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green-600); margin: 22px 0 12px; }
+    .preview { background: var(--cream-2); border-radius: 12px; padding: 12px 14px; font-size: 14px; color: var(--muted); margin-top: -4px; margin-bottom: 16px; }
+    .preview b { color: var(--ink); }
+    .msg { display: none; padding: 12px 14px; border-radius: 12px; font-weight: 600; margin-top: 14px; }
+    .msg.ok { display: block; background: #e8f6df; color: #2f6b12; }
+    .msg.err { display: block; background: #fdecec; color: #a12626; }
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .top a { font-weight: 700; color: var(--green-700); text-decoration: none; }
+    .linkbtn { background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; text-decoration: underline; padding: 0; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<div class="adm">
+  <div class="top">
+    <a class="brand" href="index.html"><img src="images/logo/logo.png" alt="" style="width:40px;height:40px;border-radius:50%" /><span><b>Buloglibog' chiroyi</b><small>Admin panel</small></span></a>
+    <a href="index.html" target="_blank" rel="noopener">Saytni ochish ↗</a>
+  </div>
+
+  <!-- Kirish -->
+  <div class="adm-card" id="login">
+    <h1>Admin panelga kirish</h1>
+    <p class="sub">Parolni kiriting.</p>
+    <form id="loginForm">
+      <div class="fld">
+        <label for="pw">Parol</label>
+        <input id="pw" type="password" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-green btn-block" type="submit" id="loginBtn">Kirish</button>
+      <div class="msg" id="loginMsg"></div>
+    </form>
+  </div>
+
+  <!-- Tahrirlash -->
+  <div class="adm-card" id="editor" hidden>
+    <h1>Sayt ma'lumotlari</h1>
+    <p class="sub">O'zgartiring va <b>Saqlash</b> tugmasini bosing. Sayt 1–2 daqiqada yangilanadi.</p>
+    <form id="dataForm" novalidate>
+      <div class="grp">Aloqa</div>
+      <div class="fld">
+        <label for="telefon">Telefon raqami</label>
+        <input id="telefon" name="telefon" inputmode="tel" placeholder="+998 77 324 00 03" />
+        <small>Saytdagi barcha telefon raqamlari va qo'ng'iroq tugmalari o'zgaradi.</small>
+      </div>
+      <div class="fld">
+        <label for="ariza_havola">Onlayn ariza havolasi</label>
+        <input id="ariza_havola" name="ariza_havola" inputmode="url" placeholder="https://forms.gle/..." />
+      </div>
+
+      <div class="grp">Narxlar (1 kishi / 1 kun, so'm)</div>
+      <div class="row3">
+        <div class="fld"><label for="narx_oddiy">Oddiy</label><input id="narx_oddiy" name="narx_oddiy" inputmode="numeric" /></div>
+        <div class="fld"><label for="narx_pol_lyuks">Pol-lyuks</label><input id="narx_pol_lyuks" name="narx_pol_lyuks" inputmode="numeric" /></div>
+        <div class="fld"><label for="narx_lyuks">Lyuks</label><input id="narx_lyuks" name="narx_lyuks" inputmode="numeric" /></div>
+      </div>
+      <div class="preview" id="kursPreview"></div>
+
+      <div class="grp">Shior</div>
+      <div class="fld"><label for="shior_uz">O'zbekcha</label><input id="shior_uz" name="shior_uz" /></div>
+      <div class="fld"><label for="shior_ru">Ruscha</label><input id="shior_ru" name="shior_ru" /></div>
+
+      <button class="btn btn-sun btn-block" type="submit" id="saveBtn">Saqlash</button>
+      <div class="msg" id="saveMsg"></div>
+    </form>
+    <p style="margin-top:18px;text-align:center"><button class="linkbtn" id="logout" type="button">Chiqish</button></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var FIELDS = ['telefon', 'ariza_havola', 'narx_oddiy', 'narx_pol_lyuks', 'narx_lyuks', 'shior_uz', 'shior_ru'];
+  var PRICES = ['narx_oddiy', 'narx_pol_lyuks', 'narx_lyuks'];
+  var password = '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function store(k, v) { try { v === null ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+  function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function num(v) { return Number(String(v).replace(/\D/g, '')); }
+  function msg(el, text, ok) { el.textContent = text; el.className = 'msg ' + (ok ? 'ok' : 'err'); }
+
+  function post(payload) {
+    return fetch('/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (b) { return { ok: r.ok, body: b }; }); });
+  }
+
+  function preview() {
+    var o = num($('narx_oddiy').value);
+    $('kursPreview').innerHTML = o
+      ? "Kurs narxlari avtomatik: <b>7 kun — " + fmt(o * 7) + "</b>, <b>10 kun — " + fmt(o * 10) + "</b>, <b>14 kun — " + fmt(o * 14) + "</b> so'm"
+      : "Oddiy xona narxini kiriting";
+  }
+
+  function fill() {
+    return fetch('data/sayt.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      FIELDS.forEach(function (k) { $(k).value = PRICES.indexOf(k) >= 0 ? fmt(d[k]) : (d[k] || ''); });
+      preview();
+    });
+  }
+
+  function openEditor() { $('login').hidden = true; $('editor').hidden = false; fill(); }
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var pw = $('pw').value; if (!pw) return;
+    $('loginBtn').disabled = true; $('loginBtn').textContent = 'Tekshirilmoqda...';
+    post({ password: pw, check: true }).then(function (r) {
+      if (r.ok) { password = pw; store('adm', pw); openEditor(); }
+      else msg($('loginMsg'), r.body.error || 'Xatolik', false);
+    }).catch(function () { msg($('loginMsg'), "Internet bilan bog'lanishda xato", false); })
+      .then(function () { $('loginBtn').disabled = false; $('loginBtn').textContent = 'Kirish'; });
+  });
+
+  PRICES.forEach(function (k) {
+    $(k).addEventListener('input', function () { var n = num(this.value); this.value = n ? fmt(n) : ''; preview(); });
+  });
+
+  $('dataForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = {};
+    FIELDS.forEach(function (k) { data[k] = PRICES.indexOf(k) >= 0 ? num($(k).value) : $(k).value.trim(); });
+    $('saveBtn').disabled = true; $('saveBtn').textContent = 'Saqlanmoqda...';
+    post({ password: password, data: data }).then(function (r) {
+      if (r.ok) msg($('saveMsg'), "Saqlandi! Sayt 1–2 daqiqada yangilanadi.", true);
+      else { msg($('saveMsg'), r.body.error || 'Xatolik', false); if (r.body.error === "Parol noto'g'ri") { store('adm', null); } }
+    }).catch(function () { msg($('saveMsg'), "Internet bilan bog'lanishda xato", false); })
+      .then(function () { $('saveBtn').disabled = false; $('saveBtn').textContent = 'Saqlash'; });
+  });
+
+  $('logout').addEventListener('click', function () { store('adm', null); password = ''; location.reload(); });
+
+  var saved = load('adm');
+  if (saved) { password = saved; openEditor(); }
+})();
+</script>
+</body>
+</html>
