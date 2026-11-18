@@ -25,3 +25,4 @@ h1, h2, h3, .brand b, .hero-facts b, .doc .av, .step::before, .incl-item .n, .co
 .who-card a.btn-sun { color: #fff; }
 .hero::after { background: linear-gradient(180deg, rgba(6,40,70,.5) 0%, rgba(6,40,70,.6) 40%, rgba(6,40,70,.9) 100%); }
 .hero-facts b, .hero h1 em { color: #a6e47f; }
+.room strong { color: #a6e47f; }

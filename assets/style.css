@@ -415,3 +415,19 @@ p { margin: 0; }
   .header .header-cta .btn { display: none; }
   #bosh .hero-facts { display: none; }
 }
+
+/* Narxlar */
+.price { margin: 4px 0 14px; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.08); }
+.price b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -.01em; }
+.price span { font-size: 14px; opacity: .75; }
+.pack.best .price { background: var(--green-100); }
+.rooms-head { text-align: center; margin: 56px 0 18px; }
+.rooms-head h3 { font-size: 26px; }
+.rooms-head p { opacity: .75; margin-top: 6px; }
+.rooms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 900px; margin: 0 auto; }
+.room { position: relative; text-align: center; padding: 26px 16px 20px; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); }
+.room b { display: block; font-size: 22px; }
+.room strong { display: block; font-size: 22px; font-weight: 800; color: var(--sun); margin-top: 6px; }
+.room small { opacity: .75; font-size: 14px; }
+.room-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); white-space: nowrap; background: var(--sun); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
+@media (max-width: 600px) { .rooms { grid-template-columns: 1fr; } .room { display: grid; grid-template-columns: 1fr auto; text-align: left; align-items: center; gap: 0 12px; padding: 20px 18px; } .room b { grid-row: span 2; } .room strong { margin: 0; text-align: right; } .room small { text-align: right; } }
