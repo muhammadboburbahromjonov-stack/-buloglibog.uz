@@ -401,3 +401,17 @@ p { margin: 0; }
   .footer .grid { gap: 22px; }
 }
 @media (max-width: 800px) { .footer .grid { grid-template-columns: 1fr; } }
+#bosh .hero { min-height: 0; }
+#bosh .hero .wrap { padding-top: 64px; }
+#bosh .hero h1 { font-size: clamp(36px, 5.2vw, 60px); margin: 14px 0 14px; }
+#bosh .hero-facts { margin-top: 32px; }
+
+/* Til almashtirgich */
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--white); flex: none; }
+.lang a { padding: 7px 11px; font-weight: 800; font-size: 13px; text-decoration: none; color: var(--muted); letter-spacing: .03em; }
+.lang a.on { background: var(--green-700); color: #fff; }
+@media (max-width: 640px) { .header-cta { gap: 8px; } .lang a { padding: 6px 8px; font-size: 12px; } }
+@media (max-width: 760px) {
+  .header .header-cta .btn { display: none; }
+  #bosh .hero-facts { display: none; }
+}

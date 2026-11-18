@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Территория — санаторий «Buloglibog' chiroyi», Коканд</title>
+  <meta name="description" content="Территория санатория «Buloglibog' chiroyi» на фото: зелёный сад, аллеи, беседки, фонтан. Бронирование: +998 77 324 00 03" />
+  <meta name="theme-color" content="#0a2540" />
+  <link rel="icon" href="images/logo/buloglibog-chiroyilogo.png.jpg" />
+  <link rel="alternate" hreflang="uz" href="https://buloglibog.uz/tabiat.html" />
+  <link rel="alternate" hreflang="ru" href="https://buloglibog.uz/tabiat-ru.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/theme-b.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <a href="ru.html" class="brand">
+      <img src="images/logo/buloglibog-chiroyilogo.png.jpg" alt="Логотип санатория «Buloglibog' chiroyi»" />
+      <span><b>Buloglibog' chiroyi</b><small>Санаторий · Коканд</small></span>
+    </a>
+    <div class="header-cta">
+      <div class="lang"><a href="tabiat.html">UZ</a><a class="on" href="tabiat-ru.html">RU</a></div>
+      <a class="header-phone" href="tel:+998773240003">+998 77 324 00 03</a>
+      <a class="btn btn-sun" href="ru.html#bron">Забронировать</a>
+    </div>
+  </div>
+</header>
+
+<div class="viewbar"><div class="wrap"><a class="back" href="ru.html">← Главная</a><span>Территория санатория — все фото</span></div></div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Территория санатория</span>
+    <h2>Место, где вы будете восстанавливаться</h2>
+    <p>Цветы, высокие деревья, скамейки с навесом и фонтан. После процедур вы будете гулять здесь.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:48px">
+  <div class="wrap">
+    <div class="masonry" id="gallery"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="lead-box">
+      <div class="txt">
+        <span class="eyebrow">Забронировать</span>
+        <h2>Хотите отдохнуть здесь?</h2>
+        <p>Позвоните — подскажем курс, даты и цену.</p>
+      </div>
+      <div class="form">
+        <a class="btn btn-green btn-block" href="tel:+998773240003">+998 77 324 00 03</a>
+        <div class="or">или</div>
+        <a class="btn btn-sun btn-block" href="ru.html#kurslar">Посмотреть курсы</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="legal" style="margin-top:0;border-top:0;padding-top:0">
+      ЧАСТНЫЙ САНАТОРИЙ «BULOG'LIBOG' CHIROYI» · Лицензия №073119 · Коканд, Ферганская область<br />
+      © 2026 Санаторий «Buloglibog' chiroyi» · <a href="ru.html">Вернуться на главную</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-green" href="tel:+998773240003">Позвонить</a>
+  <a class="btn btn-sun" href="ru.html#bron">Забронировать</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Фото">
+  <button class="x" aria-label="Закрыть">×</button>
+  <button class="prev" aria-label="Назад">‹</button>
+  <img id="lb-img" alt="" />
+  <button class="next" aria-label="Далее">›</button>
+  <div class="cnt" id="lb-cnt"></div>
+</div>
+
+<script>
+  var images = [
+    "K_F_9170.jpg","K_F_9206.jpg","K_F_9151.jpg","K_F_9156.jpg","K_F_9160.jpg",
+    "K_F_9166.jpg","K_F_9176.jpg","K_F_9180.jpg","K_F_9186.jpg","K_F_9191.jpg",
+    "K_F_9196.jpg","K_F_9201.jpg","K_F_9211.jpg","K_F_9216.jpg","K_F_9221.jpg",
+    "K_F_9226.jpg","K_F_9231.jpg","K_F_9236.jpg","K_F_9241.jpg"
+  ];
+  var gallery = document.getElementById('gallery');
+  images.forEach(function (name, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Увеличить фото ' + (i + 1));
+    b.innerHTML = '<img src="images/tabiat/' + name + '" alt="Территория санатория — фото ' + (i + 1) + '" loading="lazy" />';
+    b.addEventListener('click', function () { open(i); });
+    gallery.appendChild(b);
+  });
+
+  var lb = document.getElementById('lb'), img = document.getElementById('lb-img'), cnt = document.getElementById('lb-cnt'), cur = 0;
+  function show() { img.src = 'images/tabiat/' + images[cur]; cnt.textContent = (cur + 1) + ' / ' + images.length; }
+  function open(i) { cur = i; show(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function go(d) { cur = (cur + d + images.length) % images.length; show(); }
+  lb.querySelector('.x').onclick = close;
+  lb.querySelector('.prev').onclick = function (e) { e.stopPropagation(); go(-1); };
+  lb.querySelector('.next').onclick = function (e) { e.stopPropagation(); go(1); };
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') go(-1);
+    if (e.key === 'ArrowRight') go(1);
+  });
+  // Telefonda surib almashtirish
+  var sx = null;
+  lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+    sx = null;
+  });
+</script>
+<script>
+  // Til almashtirganda ochiq bo'limni saqlash
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href') + location.hash; });
+  });
+</script>
+</body>
+</html>

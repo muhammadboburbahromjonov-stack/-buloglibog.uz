@@ -12,29 +12,13 @@
   <meta name="theme-color" content="#0a2540" />
   <link rel="icon" href="images/logo/buloglibog-chiroyilogo.png.jpg" />
 
+  <link rel="alternate" hreflang="uz" href="https://buloglibog.uz/" />
+  <link rel="alternate" hreflang="ru" href="https://buloglibog.uz/ru.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="assets/theme-b.css" id="theme-b" />
-  <link rel="stylesheet" href="assets/theme-mix.css" id="theme-mix" />
-  <script>
-    // Boshqa variantlarni solishtirish: ?dizayn=a | b | c (standart — B+C aralash)
-    (function () {
-      var v = new URLSearchParams(location.search).get('dizayn');
-      if (v !== 'a' && v !== 'b' && v !== 'c') return;
-      var b = document.getElementById('theme-b'), m = document.getElementById('theme-mix');
-      m.parentNode.removeChild(m);
-      if (v !== 'b') b.parentNode.removeChild(b);
-      if (v === 'c') document.write('<link rel="stylesheet" href="assets/theme-c.css" />');
-      document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('a[href^="index.html"], a[href^="tabiat.html"]').forEach(function (a) {
-          var h = a.getAttribute('href'), i = h.indexOf('#');
-          a.setAttribute('href', (i < 0 ? h : h.slice(0, i)) + '?dizayn=' + v + (i < 0 ? '' : h.slice(i)));
-        });
-      });
-    })();
-  </script>
+  <link rel="stylesheet" href="assets/theme-b.css" />
 </head>
 <body>
 
@@ -45,14 +29,8 @@
       <img src="images/logo/buloglibog-chiroyilogo.png.jpg" alt="Buloglibog' chiroyi logotipi" />
       <span><b>Buloglibog' chiroyi</b><small>Sanatoriya · Qo'qon</small></span>
     </a>
-    <nav class="nav">
-      <a href="#kurslar">Kurslar</a>
-      <a href="#narxga-kiradi">Nimalar kiradi</a>
-      <a href="#hudud">Hudud</a>
-      <a href="#fikrlar">Fikrlar</a>
-      <a href="#manzil">Manzil</a>
-    </nav>
     <div class="header-cta">
+      <div class="lang"><a class="on" href="index.html">UZ</a><a href="ru.html">RU</a></div>
       <a class="header-phone" href="tel:+998773240003">+998 77 324 00 03</a>
       <a class="btn btn-sun" href="#bron">Joy band qilish</a>
     </div>
@@ -553,6 +531,12 @@
     window.addEventListener('hashchange', show);
     show();
   })();
+</script>
+<script>
+  // Til almashtirganda ochiq bo'limni saqlash
+  document.querySelectorAll('.lang a').forEach(function (a) {
+    a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href') + location.hash; });
+  });
 </script>
 </body>
 </html>
