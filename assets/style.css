@@ -695,3 +695,12 @@ body { background: #0a2540; }
 @media (min-width: 901px) { .view.page .lead-box { grid-template-columns: 1.1fr 1fr; } }
 @media (min-width: 1000px) { .hcards-3 { grid-template-columns: repeat(3, 1fr); } .hcards-3 .hcard { grid-template-columns: 1fr; grid-template-areas: "ico" "body" "go"; gap: 10px; padding: 24px; } }
 @media (min-width: 761px) and (max-width: 999px) { .hcards-3 .hcard:last-child { grid-column: span 2; } }
+
+/* 1-ekran: eski hero + ostida bo'limlar; bo'lim belgilari kichikroq */
+#bosh .hero { min-height: auto; align-items: flex-start; }
+#bosh .hero .wrap { padding-top: 48px; padding-bottom: 56px; }
+.hero-cards { margin-top: 28px; }
+.hs-head .screen-n { display: table; margin-bottom: 14px; }
+.hcard-ico { width: 46px !important; height: 46px !important; font-size: 23px !important; }
+.hcards-3 .hcard-ico { margin-bottom: 2px; }
+@media (max-width: 760px) { .hcard-ico { width: 42px !important; height: 42px !important; font-size: 21px !important; } }
