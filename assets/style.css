@@ -587,3 +587,14 @@ p { margin: 0; }
 .pg b { font-size: 19px; }
 @media (max-width: 560px) { .view.page { font-size: 18px; } .pg b { font-size: 16px; } }
 @media (max-width: 600px) { .view.page .room b { font-size: 21px; white-space: nowrap; } .view.page .room strong { font-size: 24px; } }
+
+/* ===== Oq fon yo'q: tepa qator va pastki panel ham to'q ===== */
+body .header { background: rgba(6,28,50,.92); border-bottom-color: rgba(255,255,255,.12); }
+.header .brand b { color: #fff; }
+.header .brand small { color: rgba(255,255,255,.7); }
+.header-phone { color: #fff; }
+.lang { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.3); }
+.lang a { color: rgba(255,255,255,.8); }
+.lang a.on { background: var(--sun); color: #fff; }
+body .mbar { background: rgba(6,28,50,.94); border-top-color: rgba(255,255,255,.12); }
+body { background: #0a2540; }
