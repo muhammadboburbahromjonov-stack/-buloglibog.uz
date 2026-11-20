@@ -21,8 +21,8 @@
     var okNarx = function (v) { return typeof v === 'number' && v > 0; };
     if (okNarx(N.narx_oddiy)) KUNLAR.forEach(function (d) { add(fmt(D.narx_oddiy * d), fmt(N.narx_oddiy * d)); });
     if (okNarx(N.narx_oddiy)) add(fmt(D.narx_oddiy), fmt(N.narx_oddiy));
-    if (okNarx(N.narx_pol_lyuks)) add(fmt(D.narx_pol_lyuks), fmt(N.narx_pol_lyuks));
-    if (okNarx(N.narx_lyuks)) add(fmt(D.narx_lyuks), fmt(N.narx_lyuks));
+    if (okNarx(N.narx_pol_lyuks)) [1, 7, 10].forEach(function (d) { add(fmt(D.narx_pol_lyuks * d), fmt(N.narx_pol_lyuks * d)); });
+    if (okNarx(N.narx_lyuks)) [1, 7, 10].forEach(function (d) { add(fmt(D.narx_lyuks * d), fmt(N.narx_lyuks * d)); });
     add(D.telefon, N.telefon);
     add(D.shior_uz, N.shior_uz);
     add(D.shior_ru, N.shior_ru);
