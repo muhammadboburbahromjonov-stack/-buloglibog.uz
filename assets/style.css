@@ -435,3 +435,32 @@ p { margin: 0; }
 .motto { display: inline-block; margin-top: 18px; padding: 10px 18px; border-left: 4px solid var(--sun); background: rgba(255,255,255,.12); border-radius: 0 12px 12px 0; font-size: clamp(17px, 2vw, 21px); font-weight: 700; font-style: italic; backdrop-filter: blur(4px); }
 .tile-ico { font-size: 28px; line-height: 1; font-family: "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
 @media (max-width: 560px) { .tile-ico { font-size: 26px; } }
+
+/* ===== Suratli sahifa sarlavhasi ===== */
+.page-banner { position: relative; color: #fff; background: #0a3557 center/cover no-repeat; min-height: 300px; display: flex; align-items: flex-end; }
+.page-banner::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,30,52,.35) 0%, rgba(6,30,52,.55) 45%, rgba(6,30,52,.9) 100%); }
+.page-banner .wrap { position: relative; z-index: 1; width: 100%; padding-top: 22px; padding-bottom: 34px; }
+.page-banner .back { display: inline-block; margin-bottom: 70px; font-weight: 700; text-decoration: none; color: #fff; padding: 9px 16px 9px 12px; border-radius: 999px; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.35); backdrop-filter: blur(6px); font-size: 15px; }
+.page-banner .back:hover { background: rgba(255,255,255,.26); }
+.page-banner h1 { font-size: clamp(30px, 4.6vw, 50px); margin: 0 0 10px; }
+.page-banner p { font-size: clamp(16px, 1.8vw, 19px); opacity: .9; max-width: 640px; }
+@media (max-width: 560px) { .page-banner { min-height: 240px; } .page-banner .back { margin-bottom: 48px; } }
+.anchor { scroll-margin-top: 80px; }
+.view:not(#bosh) .anchor + .anchor > .section:first-child { padding-top: 8px; }
+
+/* ===== Bosh sahifa: suratli tugmalar ===== */
+.ptiles { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ptile { position: relative; overflow: hidden; display: flex; align-items: flex-end; gap: 14px; min-height: 210px; padding: 22px; border-radius: 22px; color: #fff; text-decoration: none; background: #0a3557 center/cover no-repeat; box-shadow: var(--shadow); isolation: isolate; transition: transform .2s ease; }
+.ptile::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6,30,52,.1) 0%, rgba(6,30,52,.55) 50%, rgba(6,30,52,.92) 100%); transition: background .2s; }
+.ptile:hover { transform: translateY(-3px); }
+.ptile:hover::before { background: linear-gradient(180deg, rgba(6,30,52,.2) 0%, rgba(6,30,52,.65) 50%, rgba(6,30,52,.95) 100%); }
+.ptile-emo { flex: none; width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; font-size: 28px; background: rgba(255,255,255,.92); font-family: "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
+.ptile-txt { flex: 1; min-width: 0; }
+.ptile-txt b { display: block; font-size: 21px; line-height: 1.2; }
+.ptile-txt small { display: block; font-size: 14.5px; opacity: .88; margin-top: 4px; }
+.ptile-arr { flex: none; font-size: 22px; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: var(--sun); color: #fff; }
+@media (max-width: 700px) {
+  .ptiles { grid-template-columns: 1fr; gap: 12px; }
+  .ptile { min-height: 170px; padding: 18px; }
+  .ptile-txt b { font-size: 19px; }
+}
