@@ -13,6 +13,8 @@ T = {
 "va sog'lig'ingizni tiklang": "и восстанавливайте здоровье",
 "Yashil bog' ichidagi sanatoriya. 7–14 kunlik kurs: yashash, 3 mahal mazali taomlar, har kuni shifokor ko'rigi va muolajalar — hammasi bitta narxda.": "Санаторий в зелёном саду. Курс 7–14 дней: проживание, вкусное 3-разовое питание, ежедневный осмотр врача и процедуры — всё в одной цене.",
 "Narxni so'rash": "Узнать цену",
+"Sanatoriya": "Санаторий",
+"Kirish →": "Открыть →",
 "1 kunlik narx — 1 kishi uchun": "Цена за 1 день — за 1 человека",
 "Haftalik va 10 kunlik narxlar — «Narxlar» sahifasida.": "Цены за неделю и 10 дней — на странице «Цены».",
 "Barcha narxlar": "Все цены",
