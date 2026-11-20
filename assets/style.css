@@ -706,3 +706,14 @@ body { background: #0a2540; }
 @media (max-width: 760px) { .hcard-ico { width: 42px !important; height: 42px !important; font-size: 21px !important; } }
 .view.page .who-main { grid-column: 1 / -1; border: 2px solid var(--accent-2); background: var(--glass-strong); }
 .view.page .who-main h3 { font-size: 26px; }
+
+/* ===== Tezlik: og'ir effektlar o'chirildi ===== */
+*, *::before, *::after { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+:root { --glass: rgba(8, 30, 52, .82); --glass-strong: rgba(8, 30, 52, .92); }
+.hcard, .pg, .view.page .room, .hero-facts div, .sprices div, .slist li { will-change: auto; }
+.view.page .page-banner, .view.page .head, .view.page .pgroup-head, .view.page .incl-item, .view.page .packs-note, .view.page .pack:not(.best), .screen { text-shadow: 0 1px 3px rgba(0,0,0,.55); }
+.page-bg { transform: translateZ(0); }
+.view.active { animation: none; }
+.reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+.hcard, .scard, .ptile { transition: background .15s, border-color .15s; }
+.hcard:hover, .scard:hover, .ptile:hover { transform: none; }

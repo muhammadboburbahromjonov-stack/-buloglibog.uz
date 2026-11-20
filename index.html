@@ -86,7 +86,7 @@
   </div>
 </section>
 <section class="hs" id="ekran-davolash">
-  <div class="hs-bg" style="background-image:url('images/tabiat/K_F_9216.jpg')" aria-hidden="true"></div>
+  <div class="hs-bg" data-bg="images/tabiat/K_F_9216.jpg" aria-hidden="true"></div>
   <div class="wrap">
       <div class="hs-head">
         <span class="screen-n">2 / 4</span>
@@ -108,7 +108,7 @@
   </div>
 </section>
 <section class="hs" id="ekran-sanatoriya">
-  <div class="hs-bg" style="background-image:url('images/tabiat/K_F_9206.jpg')" aria-hidden="true"></div>
+  <div class="hs-bg" data-bg="images/tabiat/K_F_9206.jpg" aria-hidden="true"></div>
   <div class="wrap">
       <div class="hs-head">
         <span class="screen-n">3 / 4</span>
@@ -130,7 +130,7 @@
   </div>
 </section>
 <section class="hs" id="ekran-aloqa">
-  <div class="hs-bg" style="background-image:url('images/tabiat/K_F_9241.jpg')" aria-hidden="true"></div>
+  <div class="hs-bg" data-bg="images/tabiat/K_F_9241.jpg" aria-hidden="true"></div>
   <div class="wrap">
       <div class="hs-head">
         <span class="screen-n">4 / 4</span>
@@ -710,6 +710,18 @@
   document.querySelectorAll('.lang a').forEach(function (a) {
     a.addEventListener('click', function () { if (location.hash) a.href = a.getAttribute('href') + location.hash; });
   });
+</script>
+<script>
+  // Fon suratlarini faqat ekranga yaqinlashganda yuklash (sayt tezroq ochiladi)
+  (function () {
+    var els = document.querySelectorAll('[data-bg]');
+    function load(el) { el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')"; el.removeAttribute('data-bg'); }
+    if (!('IntersectionObserver' in window)) { els.forEach(load); return; }
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } });
+    }, { rootMargin: '400px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
 </script>
 <script src="assets/data.js" defer></script>
 </body>
