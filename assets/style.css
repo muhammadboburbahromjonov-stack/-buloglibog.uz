@@ -619,3 +619,77 @@ body { background: #0a2540; }
   .scard-emo { width: 54px; height: 54px; font-size: 28px; }
 }
 @media (min-width: 701px) { .scard { min-height: 270px; } #bosh #ekran-narx .wrap { padding-top: 36px; padding-bottom: 36px; } #bosh .screen h1 { font-size: clamp(34px, 4.6vw, 54px); } }
+
+/* =====================================================================
+   YAGONA USLUB: to'q fon + surat, shaffof "shisha" kartochkalar, oq matn
+   ===================================================================== */
+:root {
+  --glass: rgba(8, 30, 52, .62);
+  --glass-strong: rgba(8, 30, 52, .78);
+  --glass-line: rgba(255, 255, 255, .18);
+  --glass-text-2: rgba(255, 255, 255, .82);
+  --accent-2: #a6e47f;
+}
+
+/* --- Bosh sahifa ekranlari --- */
+.hs { position: relative; isolation: isolate; min-height: calc(100vh - 72px); min-height: calc(100svh - 72px); display: flex; align-items: center; color: #fff; }
+.hs-bg { position: absolute; inset: 0; z-index: -1; background: #0a2540 center / cover no-repeat; }
+.hs-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, rgba(5,22,40,.9) 0%, rgba(5,22,40,.72) 55%, rgba(5,22,40,.55) 100%); }
+.hs + .hs .hs-bg::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(255,255,255,.12); z-index: 1; }
+.hs .wrap { width: 100%; padding-top: 64px; padding-bottom: 64px; display: grid; gap: 36px; }
+.hs-head { max-width: 760px; }
+.hs-head h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.08; margin: 0 0 18px; }
+.hs-head h1 em { font-style: normal; color: var(--accent-2); }
+.hs-head h2 { font-size: clamp(34px, 4.6vw, 54px); margin: 0 0 10px; }
+.hs-lead { font-size: clamp(19px, 2vw, 22px); color: var(--glass-text-2); }
+.hs-head .motto { margin: 0 0 26px; font-size: clamp(18px, 2vw, 22px); }
+.hs-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hs-actions .btn { font-size: 17px; padding: 15px 26px; }
+
+.hcards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.hcard { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "ico body" "ico go"; align-items: center; gap: 6px 20px; padding: 26px 28px; border-radius: 20px; text-decoration: none; color: #fff; background: var(--glass); border: 1px solid var(--glass-line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: background .2s, border-color .2s, transform .2s; }
+.hcard:hover { background: var(--glass-strong); border-color: var(--accent-2); transform: translateY(-2px); }
+.hcard-ico { grid-area: ico; width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; font-size: 34px; background: rgba(255,255,255,.12); border: 1px solid var(--glass-line); font-family: "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; }
+.hcard-body { grid-area: body; }
+.hcard-body b { display: block; font-size: clamp(22px, 2.4vw, 27px); line-height: 1.2; }
+.hcard-body small { display: block; font-size: 17px; color: var(--glass-text-2); margin-top: 4px; }
+.hcard-go { grid-area: go; font-weight: 800; font-size: 16px; color: var(--accent-2); }
+@media (max-width: 760px) {
+  .hs .wrap { padding-top: 44px; padding-bottom: 44px; gap: 26px; }
+  .hcards { grid-template-columns: 1fr; gap: 12px; }
+  .hcard { padding: 18px 18px; gap: 4px 16px; }
+  .hcard-ico { width: 56px; height: 56px; font-size: 28px; }
+  .hs-actions .btn { flex: 1 1 100%; }
+}
+
+/* --- Ichki sahifalar: oq kartochkalar o'rniga shisha kartochkalar --- */
+.view.page .who-card, .view.page .step, .view.page .doc, .view.page .review,
+.view.page .contact-card, .view.page .extra div, .view.page .faq details, .view.page .form {
+  background: var(--glass); border: 1px solid var(--glass-line); color: #fff; box-shadow: none;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.view.page .who-card p, .view.page .step p, .view.page .extra span, .view.page .faq details p,
+.view.page .review .who-r span, .view.page .contact-card .row b, .view.page .contact-card .row span,
+.view.page .form .hint, .view.page .form .or { color: var(--glass-text-2) !important; }
+.view.page .who-card a, .view.page .faq a { color: var(--accent-2); }
+.view.page .who-ico, .view.page .doc .av { background: rgba(255,255,255,.12); color: var(--accent-2); }
+.view.page .doc .role { color: var(--accent-2); }
+.view.page .step::before { background: var(--accent-2); color: #0a2540; }
+.view.page .stars { color: #f2c94c; }
+.view.page .faq summary::after { color: var(--accent-2); }
+.view.page .contact-card .row a.big { color: #fff; }
+.view.page .contact-card .btn-line { color: #fff; border-color: rgba(255,255,255,.8); }
+.view.page .form .or::before, .view.page .form .or::after { background: var(--glass-line); }
+.view.page .lead-box { background: transparent; border: 0; gap: 18px; }
+.view.page .lead-box .txt { background: var(--glass); border: 1px solid var(--glass-line); border-radius: 20px; backdrop-filter: blur(10px); }
+.view.page .form { border-radius: 20px; }
+.view.page .who-card.accent { background: var(--glass-strong); border-color: var(--accent-2); }
+.view.page .pack { background: var(--glass); border-color: var(--glass-line); backdrop-filter: blur(10px); }
+.view.page .pack.best { background: var(--glass-strong); color: #fff; border: 2px solid var(--accent-2); }
+.view.page .pack.best .price { background: rgba(255,255,255,.1); }
+.view.page .price { background: rgba(255,255,255,.08); }
+.view.page .room { background: var(--glass); border-color: var(--glass-line); }
+.view.page .incl-photos img, .view.page .strip a { border: 1px solid var(--glass-line); }
+.view.page .faq details { margin-bottom: 12px; }
+.view.page .view-cta { background: var(--glass-strong); }
+@media (min-width: 901px) { .view.page .lead-box { grid-template-columns: 1.1fr 1fr; } }
