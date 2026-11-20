@@ -13,6 +13,8 @@ T = {
 "va sog'lig'ingizni tiklang": "и восстанавливайте здоровье",
 "Yashil bog' ichidagi sanatoriya. 7–14 kunlik kurs: yashash, 3 mahal mazali taomlar, har kuni shifokor ko'rigi va muolajalar — hammasi bitta narxda.": "Санаторий в зелёном саду. Курс 7–14 дней: проживание, вкусное 3-разовое питание, ежедневный осмотр врача и процедуры — всё в одной цене.",
 "Narxni so'rash": "Узнать цену",
+"Jarrohlik": "Хирургия",
+"Xirurgik va laparoskopik jarrohlik amaliyotlari": "Хирургические и лапароскопические операции",
 "Davolanish kurslari, xona narxlari va narxga nimalar kiradi": "Курсы лечения, цены на номера и что входит в стоимость",
 "Davolash va shifokorlar": "Лечение и врачи",
 "Qaysi kasalliklar davolanadi va sizni kim davolaydi": "Какие болезни мы лечим и кто будет вас лечить",
