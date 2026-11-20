@@ -717,3 +717,7 @@ body { background: #0a2540; }
 .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 .hcard, .scard, .ptile { transition: background .15s, border-color .15s; }
 .hcard:hover, .scard:hover, .ptile:hover { transform: none; }
+
+/* 1-ekran foni: surat ranglari ko'rinsin, faqat matn tomoni to'qroq */
+body #bosh .hero::after { background: linear-gradient(90deg, rgba(5,22,40,.88) 0%, rgba(5,22,40,.62) 45%, rgba(5,22,40,.15) 100%), linear-gradient(0deg, rgba(5,22,40,.75) 0%, rgba(5,22,40,0) 40%); }
+#bosh .hero-bg { filter: saturate(1.15) contrast(1.05); }
